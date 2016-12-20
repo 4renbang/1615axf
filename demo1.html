@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJs</title>
+</head>
+<body>
+	<div data-ng-app="" data-ng-init="firstName='tom'">
+		<p>名字：<input type="text" data-ng-model="name"></p>
+		<h1>Hello {{firstName + " " + name}}</h1>
+		<p>姓名为：<span data-ng-bind="firstName"></span></p>
+	</div>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		名：<input type="text" ng-model="firstName"></br>
+		姓：<input type="text" ng-model="lastName"><br>
+		<br>
+		姓名：{{firstName + ' ' + lastName}}
+	</div>
+</body>
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script type="text/javascript">
+	/*
+	AngularJS 扩展了 HTML
+	AngularJS 通过 ng-directives(zhu rank te wu s) 扩展了 HTML。
+	ng-app 指令定义一个 AngularJS 应用程序。
+	ng-model 指令把元素值（比如输入域的值）绑定到应用程序。
+	ng-bind 指令把应用程序数据绑定到 HTML 视图。
+	 */
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope){
+		$scope.firstName= 'tom';
+		$scope.lastName= 'doe';
+
+	});
+
+</script>
+</html>
